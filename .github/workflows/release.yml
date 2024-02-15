@@ -92,13 +92,15 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: ChatGPT-PowerNukkitx
-          #repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "v${{ env.RELEASE_VERSION }}"
-          #prerelease: false
+          prerelease: false
           title: "v${{ env.RELEASE_VERSION }}"
-          path: |
-            ${{ env.API_WORKING_DIR }}/target/*.jar
-            ${{ env.WEB_WORKING_DIR }}/dist_*.tar.gz
           files: |
             ${{ env.API_WORKING_DIR }}/target/*.jar
             ${{ env.WEB_WORKING_DIR }}/dist_*.tar.gz
+      - name: Upload JAR file
+        uses: actions/upload-artifact@v2
+        with:
+          name: Create GitHub release
+          path: ${{ env.API_WORKING_DIR }}/target/*.jar
