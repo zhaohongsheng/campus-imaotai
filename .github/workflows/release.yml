@@ -99,10 +99,3 @@ jobs:
           files: |
             ${{ env.API_WORKING_DIR }}/target/*.jar
             ${{ env.WEB_WORKING_DIR }}/dist_*.tar.gz
-      - name: Upload JAR file
-        uses: actions/upload-artifact@v2
-        with:
-          name: Create GitHub release
-          files: |
-            ${{ env.API_WORKING_DIR }}/target/*.jar
-            ${{ env.WEB_WORKING_DIR }}/dist_*.tar.gz
