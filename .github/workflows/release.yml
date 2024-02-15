@@ -98,3 +98,8 @@ jobs:
           files: |
             ${{ env.API_WORKING_DIR }}/target/*.jar
             ${{ env.WEB_WORKING_DIR }}/dist_*.tar.gz
+      - name: publish test results
+        uses: actions/upload-artifact@v1
+        with:
+            name: report
+            path: report
