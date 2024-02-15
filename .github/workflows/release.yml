@@ -89,9 +89,8 @@ jobs:
       
       # 上传文件并发布 Release
       - name: Create GitHub release
-        uses: actions/upload-artifact@v2
+        uses: marvinpinto/action-automatic-releases@latest
         with:
-          name: ChatGPT-PowerNukkitx
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "v${{ env.RELEASE_VERSION }}"
           prerelease: false
