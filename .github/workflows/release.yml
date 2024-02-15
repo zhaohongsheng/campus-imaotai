@@ -103,4 +103,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Create GitHub release
-          path: ${{ env.API_WORKING_DIR }}/target/*.jar
+          files: |
+            ${{ env.API_WORKING_DIR }}/target/*.jar
+            ${{ env.WEB_WORKING_DIR }}/dist_*.tar.gz
